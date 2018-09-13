@@ -49,17 +49,16 @@ public class CaveGenerator : MonoBehaviour {
 		}
 
 		// Fake Random number generator
-		System.Random psuedoRandom = new System.Random (seed.GetHashCode ());
+		System.Random pseudoRandom = new System.Random (seed.GetHashCode ());
 
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				
 				if (x == 0 || x == width - 1 || y == 0 || y == height - 1) {
 					map [x, y] = 1;
 					// wall for the border of the cave map
 				}
 				else{
-				map [x, y] = (psuedoRandom.Next (0, 100) < randomFillPercent) ? 1 : 0;
+				map [x, y] = (pseudoRandom.Next (0, 100) < randomFillPercent) ? 1 : 0;
 				// 1 is a wall and 0 is the cave space
 				
 				}
